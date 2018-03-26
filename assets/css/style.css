@@ -1,0 +1,45 @@
+#riska{
+	padding: 60px 60px 60px 60px;
+	background-color: black;
+	
+}
+
+#sejarah {
+	height: 700px;
+	padding: 100px 100px 100px 100px;
+	text-align: center;
+	background-color: #add8e6;
+
+
+}
+
+#testimornial-area {
+	padding-top: 70px;
+	padding-bottom: 50px;
+	background-color: #00ffff;
+}
+
+nav {
+	background-color: black;
+}
+
+.navbar-invers .navbar-nav > li > a:hover{
+	color: rgba(20, 152, 152, 1);
+}
+
+.navbar-invers .navbar-nav > li > a {
+	color: #fff;
+	font-weight: 900;
+}
+
+.navbar-brand small {
+	font-size: 12px;
+	font-weight: normal;
+	letter-spacing: 1px;
+}
+
+.navbar-invers .navbar-nav > li > a{
+	color: #fff;
+	font-weight: 900;
+	background-color: #ff7f50;
+}
