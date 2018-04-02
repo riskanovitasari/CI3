@@ -28,22 +28,42 @@
 					<li><a class="page-scroll" href="<?php echo site_url()?>home/">Home</a></li>
 					<li><a class="page-scroll" href="<?php echo site_url()?>about/">About</a></li>
 					<li><a class="page-scroll" href="<?php echo site_url()?>V_blog/">Blog</a></li>
-					
 				</ul>
 			</div>   
 		</div>
 	</nav>   				
 </div>
-	<div class="row">
-		<br><br><br><br>
-		<div class ="container">
-		<div class="jumbotron">
-			<h1>Welcome my WEB</h1>
-			<h3>Belajar web Fremwork ..!!!!</h3>
-			<h3>Dan Code Igniter...</h3>
-		</div>
-	</div> 
-	</div>
+<div class="row">
+	<section id="testimornial-area">
+							<br>
+							<div class="row text-center">
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12">
+									<div class="testimonial-content">
+										<img src="../assets/img/1.jpg" alt="Image" width="250px" height="250px">
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12">
+									<div class="testimonial-content">
+										<img src="../assets/img/2.jpg" alt="Image" width="250px" height="250px">
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12">
+									<div class="testimonial-content">
+										<img src="../assets/img/3.jpg" alt="Image" width="250px" height="250px">
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12">
+									<div class="testimonial-content">
+										<img src="../assets/img/4.jpg" alt="Image" width="250px" height="250px">
+									</div>
+									<p id="dets"></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
 <div class="row">
 	
     <script src="../assets/js/jquery.min.js"></script>
