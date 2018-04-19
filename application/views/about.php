@@ -28,6 +28,7 @@
 					<li><a class="page-scroll" href="<?php echo site_url()?>home/">Home</a></li>
 					<li><a class="page-scroll" href="<?php echo site_url()?>about/">About</a></li>
 					<li><a class="page-scroll" href="<?php echo site_url()?>V_blog/">Blog</a></li>
+					<li><a class="page-scroll" href="<?php echo site_url()?>Mahasiwa/">Mahasiswa</a></li>
 				</ul>
 			</div>   
 		</div>

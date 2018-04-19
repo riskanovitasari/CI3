@@ -27,6 +27,8 @@
 					<li><a class="page-scroll" href="<?php echo site_url()?>Home/">Home</a></li>
 					<li><a class="page-scroll" href="<?php echo site_url()?>about/">About</a></li>
 					<li><a class="page-scroll" href="<?php echo site_url()?>Blog/">Blog</a></li>
+          <li><a class="page-scroll" href="<?php echo site_url()?>Mahasiwa/">Mahasiswa</a></li>
+      
 				</ul>
 			</div>   
 		</div>
@@ -34,7 +36,8 @@
 	<br><br><br><br>
 <div class="container">
     	<div class="col-xs-12 col-sm-9 col-md-9">
-
+      <a href="add" class="btn btn-primary">Add Artikel</a>
+      <br><br>
       <?php foreach ($artikel as $key): ?>
 
         <div class="well well-sm">
@@ -42,13 +45,15 @@
             <div class="col-sm-12 col-md-12">
               <h3><?php echo $key->judul_blog ?></h3>
               <br>
-              <img src="../gambar/<?php echo $key->gambar_blog;?>" alt="Image" width="500">
+              <img src="../gambar/<?php echo $key->gambar_blog;?>" alt="Image" width="300">
               <p>
-                diupload tanggal : <?php echo $key->tggl_blog ?><br>
+                Tanggal : <?php echo $key->tggl_blog ?><br>
                 <a href="<?php echo site_url()?>V_blog/detail/<?php echo $key->id_blog ?>">Read More ...</a>
               </p>
             </div>
           </div>
+          <a href='edit/<?php echo $key->id_blog?>' class='btn btn-sm btn-info'>Update</a>
+          <a href='delete/<?php echo $key->id_blog?>' class='btn btn-sm btn-danger'>Hapus</a>
         </div>
         <?php endforeach ?>
 

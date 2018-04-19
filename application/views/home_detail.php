@@ -43,13 +43,13 @@
               </td>
           </tr>
           <tr>
-            <td class="text-center">
+            <td class="text-center"> 
               <img src="../../gambar/<?php echo $key->gambar_blog;?>" alt="Image" width="500" >
             </td>
           </tr>
           <tr>
             <td class="text-center">
-              Diupload tanggal : <?php echo $key->tggl_blog; ?><br><br>
+              Tanggal : <?php echo $key->tggl_blog; ?><br><br>
             </td>
           </tr>
           <tr>

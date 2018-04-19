@@ -25,7 +25,7 @@
 					<li><a class="page-scroll" href="<?php echo site_url()?>about/">About</a></li>
 					<li><a class="page-scroll" href="<?php echo site_url()?>V_Blog/">Blog</a></li>
           			<li><a class="page-scroll" href="<?php echo site_url()?>Mahasiwa/">Mahasiswa</a></li>
-        
+        			
 				</ul>
 			</div>   
 		</div>
@@ -64,6 +64,30 @@
 				</label>
 				<div class="col-sm-10">
 					<input type="date" required class="form-control" name="tggl_blog" value="<?=isset($default['tggl_blog'])? $default['tggl_blog'] : ""?>">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2">
+					author_blog					
+				</label>
+				<div class="col-sm-10">
+					<input type="text" required class="form-control" name="author_blog" value="<?=isset($default['author_blog'])? $default['author_blog'] : ""?>">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2">
+					email_author			
+				</label>
+				<div class="col-sm-10">
+					<input type="text" name="email_author" class="form-control" required><?=isset($default['email_author'])? $default['email_author'] : ""?></textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2">
+					alamat_blog					
+				</label>
+				<div class="col-sm-10">
+					<input type="text" required class="form-control" name="alamat_blog" value="<?=isset($default['alamat_blog'])? $default['alamat_blog'] : ""?>">
 				</div>
 			</div>
 			<center>
