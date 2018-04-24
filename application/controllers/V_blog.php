@@ -63,6 +63,30 @@ class V_blog extends CI_Controller {
 		$this->load->view("home_view_form",$data);
 	}
 
+	public function create()
+    {
+        // Judul Halaman
+        $data['page_title'] = 'Buat Kategori';
+
+        // Form validasi untuk Nama Kategori
+        $this->form_validation->set_rules(
+            'cat_name',
+            'Nama Kategori',
+            'required|is_unique[categories.cat_name]',
+            array(
+                'required' => 'Isi %s tolong di isi .',
+                'is_unique' => 'Judul ' . $this->input->post('title') . ' sudah ada.'
+            )
+        );
+              if($this->form_validation->run() === FALSE){
+           
+            $this->load->view('home_view', $data);
+           
+        } else {
+            $this->category_model->create_category();
+            redirect('category');
+        }
+    }
 
 	public function delete($id){
 		$this->load->model("List_Blog");
