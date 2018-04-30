@@ -76,15 +76,5 @@ class List_Blog extends CI_Model {
 	public function hapus($id){
 		$sql = $this->db->query("DELETE from blog WHERE id_blog = ".intval($id));
 	}	
-	
-	public function create_category()
-   {
-       $data = array(
-           'cat_name'          => $this->input->post('cat_name'),
-           'cat_description'   => $this->input->post('cat_description')
-       );
-
-       return $this->db->insert('categories', $data);
-   }
 
 }
