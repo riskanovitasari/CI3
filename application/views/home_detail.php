@@ -27,6 +27,8 @@
 					<li><a class="page-scroll" href="<?php echo site_url()?>Home/">Home</a></li>
 					<li><a class="page-scroll" href="<?php echo site_url()?>about/">About</a></li>
 					<li><a class="page-scroll" href="<?php echo site_url()?>V_Blog/">Blog</a></li>
+          <li><a class="page-scroll" href="<?php echo site_url()?>Category/">Category</a></li>
+          <li><a class="page-scroll" href="<?php echo site_url()?>Datatablesctr/">Artikel</a></li>
 				</ul>
 			</div>   
 		</div>

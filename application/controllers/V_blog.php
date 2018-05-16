@@ -8,6 +8,7 @@ class V_blog extends CI_Controller {
 		$this->load->model('List_Blog');
 		$data['artikel'] = $this->List_Blog->get_artikels();
 		$this->load->view('home_view', $data);
+		
 	}
 
 	public function detail($id)

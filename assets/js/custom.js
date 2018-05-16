@@ -1,50 +1,19 @@
-﻿
-/*=============================================================
-    Authour URI: www.binarytheme.com
-    License: Commons Attribution 3.0
+jQuery(document).ready(function () {
 
-    http://creativecommons.org/licenses/by/3.0/
+    // Validasi pada saat tombol submit di-klik
+    $("#submitBtn").click(function () {
 
-    100% Free To use For Personal And Commercial Use.
-    IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
-   
-    ========================================================  */
+        // Cari elemen form yang divalidasi
+        var form = $(".needs-validation")
 
-(function ($) {
-    "use strict";
-    var mainApp = {
-       
-        reviews_fun:function()
-        {
-            ($)(function () {
-                $('#carousel-example').carousel({
-                    interval: 3000 //TIME IN MILLI SECONDS
-                });
-            });
+        // Jika tidak valid
+        if (form[0].checkValidity() === false) {
+            event.preventDefault()
+            event.stopPropagation()
+        }
 
-        },
-     
-        custom_fun:function()
-        {
+        // Tambahkan class css bernama 'was-validated' pada form
+        form.addClass('was-validated');
+    })
 
-
-            /*====================================
-             WRITE YOUR   SCRIPTS  BELOW
-            ======================================*/
-
-
-
-
-        },
-
-    }
-   
-   
-    $(document).ready(function () {
-        mainApp.reviews_fun();
-        mainApp.custom_fun();
-
-    });
-}(jQuery));
-
-
+})

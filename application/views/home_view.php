@@ -26,8 +26,9 @@
 				<ul class="nav navbar-nav">
 					<li><a class="page-scroll" href="<?php echo site_url()?>Home/">Home</a></li>
 					<li><a class="page-scroll" href="<?php echo site_url()?>about/">About</a></li>
-					<li><a class="page-scroll" href="<?php echo site_url()?>Blog/">Blog</a></li>
-          <li><a class="page-scroll" href="<?php echo site_url()?>Mahasiwa/">Mahasiswa</a></li>
+					<li><a class="page-scroll" href="<?php echo site_url()?>V_Blog/">Blog</a></li>
+          <li><a class="page-scroll" href="<?php echo site_url()?>Category/">Category</a></li>
+          <li><a class="page-scroll" href="<?php echo site_url()?>Datatablesctr/">Artikel</a></li>
       
 				</ul>
 			</div>   
@@ -57,19 +58,6 @@
         </div>
         <?php endforeach ?>
 
-<?php echo form_open( 'category/create', array('class' => 'needs-validation', 'novalidate' => '') ); ?>
-
-  <div class="form-group">
-    <label for="cat_name">Nama Kategori</label>
-    <input type="text" class="form-control" name="cat_name" value="<?php echo set_value('cat_name') ?>" required>
-    <div class="invalid-feedback">Isi judul terlebih dahulu</div>
-</div>
-<div class="form-group">
-   <label for="text">Deskripsi</label>
-   <input type="text" class="form-control" name="cat_description" value="<?php echo set_value('cat_description') ?>" required>
-   <div class="invalid-feedback">Isi deskripsi terlebih dahulu</div>
-</div>
-<button id="submitBtn" type="submit" class="btn btn-primary">Simpan</button>
 
 	
     <script src="assets/js/jquery.min.js"></script>

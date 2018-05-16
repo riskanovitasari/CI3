@@ -24,6 +24,21 @@ class List_Blog extends CI_Model {
   		$Q->free_result();
  		return $data;
 	}
+		
+	public function get_all_artikel( $limit = FALSE, $offset = FALSE )
+ 	{
+ 	// Jika variable $limit ada pada parameter maka kita limit query-nya
+ 		if ( $limit ) {
+ 			$this->db->limit($limit, $offset);
+ 		}
+ 			// Urutkan berdasar tanggal
+ 		$this->db->order_by('blog.tanggal', 'DESC');
+
+	 	$query = $this->db->get('blog');	
+ 		// Return dalam bentuk object
+ 		return $query->result();
+ 	}
+
 
 	public function upload(){
 		$config['upload_path'] = './gambar/';
