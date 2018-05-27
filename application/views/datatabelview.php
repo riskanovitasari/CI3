@@ -1,37 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <base href="<?=base_url()?>">
-    <meta charset="UTF-8">
-    <title>Add Blog</title>
-    <link rel="stylesheet" href="css/style.css"> 
-    <link rel="stylesheet" media="all" href="<?php echo base_url()?>assets/css/bootstrap.min.css" type="text/css">
-    <script src="<?php echo base_url()?>assets/css/jquery.min.js" type="text/javascript"></script>
-    <script src="<?php echo base_url()?>assets/js/jquery-1.9.1.min.js"></script>
-</head>
-<body>
-    <nav class="navbar navbar-fixed-top">
-    <a class= "navbar-brand" href="#">WEB RISKA</a> 
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>                     
-                </button>
-            </div>   
-            <div class="single-page-nav sticky-wrapper" id="tmNavbar">
-                <ul class="nav navbar-nav">
-                    <li><a class="page-scroll" href="<?php echo site_url()?>Home/">Home</a></li>
-                    <li><a class="page-scroll" href="<?php echo site_url()?>about/">About</a></li>
-                    <li><a class="page-scroll" href="<?php echo site_url()?>V_Blog/">Blog</a></li>
-                    <li><a class="page-scroll" href="<?php echo site_url()?>Category/">Category</a></li>
-                    <li><a class="page-scroll" href="<?php echo site_url()?>Datatablesctr/">Artikel</a></li>
-                    
-                </ul>
-            </div>   
-        </div>
-    </nav>  
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#dt-basic').DataTable();
+    } );
+</script>
     <br><br><br>
 
     <header class=" text-center d-flex">
@@ -48,7 +19,7 @@
         <div class="container">
             <div class="row">
                 <table id="dt-basic" class="table table-striped table-bordered">
-                    <thead>
+                    <thead class="thead-dark">
                         <tr>
                             <th>id_blog</th>
                             <th>judul_blog</th>
@@ -82,17 +53,6 @@
             </div>
         </div>
     </section>
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/jquery.dataTables.min.css">
-    <script src="<?php echo base_url() ?>assets/js/jquery.dataTables.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/js/jquery.dataTables.bootstrap4.min.js"></script>
-    <script>
-        jQuery(document).ready(function(){
 
-            // Contoh inisialisasi Datatable tanpa konfigurasi apapun
-            // #dt-basic adalah id html dari tabel yang diinisialisasi
-            $('#dt-basic').DataTable();
-        });
-
-    </script>
   </body>
 </html>

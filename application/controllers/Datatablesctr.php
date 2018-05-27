@@ -13,6 +13,7 @@ class Datatablesctr extends CI_Controller {
 	{
 		// Dapatkan data artikel dari model
 		$artikel['data'] = $this->List_Blog->get_artikels();
+		$this->load->view('templates/header');
 		$this->load->view('datatabelview', $artikel);
 	}
 
@@ -26,6 +27,7 @@ class Datatablesctr extends CI_Controller {
 
 	public function view_json()
 	{
+		$this->load->view('templates/header');
 		$this->load->view('datatablesview/dt_json');
 	}
 

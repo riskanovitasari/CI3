@@ -7,6 +7,7 @@ class V_blog extends CI_Controller {
 	{
 		$this->load->model('List_Blog');
 		$data['artikel'] = $this->List_Blog->get_artikels();
+		$this->load->view('templates/header');
 		$this->load->view('home_view', $data);
 		
 	}
@@ -15,11 +16,19 @@ class V_blog extends CI_Controller {
 	{
 		$this->load->model('List_Blog');
 		$data['detail'] = $this->List_Blog->get_single($id);
+		$this->load->view('templates/header');
 		$this->load->view('home_detail', $data);
 	}
 
 	public function add()
 	{
+
+		// Cek login
+		if(!$this->session->userdata('logged_in')){
+			$this->load->view('templates/header');
+			redirect('user/login');
+		}
+		
 		$this->load->model('List_Blog');
 		$data['tipe'] = "Add";
 
@@ -47,7 +56,7 @@ class V_blog extends CI_Controller {
 			}
 		}
 	//}
-
+		$this->load->view('templates/header');
 		$this->load->view('home_view_form', $data);
 	}
 
@@ -58,9 +67,10 @@ class V_blog extends CI_Controller {
 
 		if(isset($_POST['simpan'])){
 			$this->List_Blog->update($_POST, $id);
+			$this->load->view('templates/header');
 			redirect("V_blog");
 		}
-
+		$this->load->view('templates/header');
 		$this->load->view("home_view_form",$data);
 	}
 

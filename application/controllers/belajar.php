@@ -10,6 +10,7 @@ class Belajar extends CI_Controller {
  
 	function user(){
 		$data['biodata'] = $this->data->ambil_data()->result();
+		$this->load->view('templates/header');
 		$this->load->view('v_user.php',$data);
 	}
  
