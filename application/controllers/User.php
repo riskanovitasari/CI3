@@ -52,36 +52,36 @@ class User extends CI_Controller{
 			$this->load->view('templates/footer');
 		} else {
 			
-	// Get username
-	$username = $this->input->post('username');
-	// Get & encrypt password
-	$password = md5($this->input->post('password'));
+			$username = $this->input->post('username');
+			// Get & encrypt password
+			$password = md5($this->input->post('password'));
 
-	// Login user
-	$user_id = $this->user_model->login($username, $password);
+			// Login user
+			$user_id = $this->user_model->login($username, $password);
 
-	if($user_id){
-		// Buat session
-		$user_data = array(
-			'id_user' => $user_id,
-			'username' => $username,
-			'logged_in' => true
-		);
+			if($user_id){
+				// Buat session
+				$user_data = array(
+					'user_id' => $user_id,
+					'username' => $username,
+					'logged_in' => true,
+					'fk_level_id' => $this->user_model->get_user_level($user_id),
+				);
 
-		$this->session->set_userdata($user_data);
+				$this->session->set_userdata($user_data);
 
-		// Set message
-		$this->session->set_flashdata('user_loggedin', 'Anda sudah login');
+				// Set message
+				$this->session->set_flashdata('user_loggedin', 'Anda sudah login');
 
-		redirect('V_blog');
-	} else {
-		// Set message
-		$this->session->set_flashdata('login_failed', 'Login invalid');
+				redirect('V_blog');
+			} else {
+				// Set message
+				$this->session->set_flashdata('login_failed', 'Login invalid');
 
-		redirect('user/login');
-	}		
-		}
-	}
+				redirect('user/login');
+			}		
+ 		}
+ 	}
 
 	// Log user out
 	public function logout(){
@@ -89,11 +89,13 @@ class User extends CI_Controller{
 		$this->session->unset_userdata('logged_in');
 		$this->session->unset_userdata('user_id');
 		$this->session->unset_userdata('username');
+		$user_id = $this->session->userdata('user_id');
 
-		// Set message
-		$this->session->set_flashdata('user_loggedout', 'Anda sudah log out');
+		// Dapatkan detail dari User
+		$data['user'] = $this->user_model->get_user_details( $user_id );
 
-		redirect('user/login');
 	}
-
+	// Load view
+	$this->load->view('templates/header', $data, FALSE);
+	$this->load->view('templates/footer', $data, FALSE);
 }

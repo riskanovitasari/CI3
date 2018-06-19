@@ -15,11 +15,41 @@ class user_model extends CI_Model {
             'username' => $this->input->post('username'),
             'password' => $enc_password,
            	'date_register' => date('Y-m-d'),
+            'fk_level_id' => $this->input->post('manager')
         );
 
         // Insert user
         return $this->db->insert('users', $data);
     }
+
+     function get_user_level($user_id)
+    {
+       // Dapatkan data user berdasar $user_id
+        $this->db->select('fk_level_id');
+        $this->db->where('user_id', $user_id);
+
+        $result = $this->db->get('user');
+
+        if($result->num_rows() == 1){
+            return $result->row(0);
+        } else {
+            return false;
+        }
+    }
+
+    function get_user_details($user_id)
+    {
+        $this->db->join('levels', 'levels.level_id = users.fk_level_id', 'left');
+        $this->db->where('user_id', $user_id);
+
+        $result = $this->db->get('user');
+
+        if($result->num_rows() == 1){
+            return $result->row(0);
+        } else {
+            return false;
+        }
+     }
 
     // Proses login user
     public function login($username, $password){
