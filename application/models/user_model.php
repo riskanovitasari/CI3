@@ -22,30 +22,30 @@ class user_model extends CI_Model {
         return $this->db->insert('users', $data);
     }
 
-     function get_user_level($user_id)
+     function get_user_level($id_user)
     {
        // Dapatkan data user berdasar $user_id
-        $this->db->select('fk_level_id');
-        $this->db->where('user_id', $user_id);
+        $this->db->select('fk_id_level');
+        $this->db->where('id_user', $id_user);
 
-        $result = $this->db->get('user');
+        $result = $this->db->get('users');
 
         if($result->num_rows() == 1){
-            return $result->row(0);
+            return $result->row(0)->fk_id_level;
         } else {
             return false;
         }
     }
 
-    function get_user_details($user_id)
+    function get_user_details($username)
     {
-        $this->db->join('levels', 'levels.level_id = users.fk_level_id', 'left');
-        $this->db->where('user_id', $user_id);
+        $this->db->join('level', 'level.id_level = users.fk_id_level', 'left');
+        $this->db->where('username', $username);
 
-        $result = $this->db->get('user');
+        $result = $this->db->get('users');
 
         if($result->num_rows() == 1){
-            return $result->row(0);
+            return $result->row();
         } else {
             return false;
         }
@@ -61,7 +61,7 @@ class user_model extends CI_Model {
 
 
         if($result->num_rows() == 1){
-            return $result->row(0)->user_id;
+            return $result->row(0)->id_user;
         } else {
             return false;
         }

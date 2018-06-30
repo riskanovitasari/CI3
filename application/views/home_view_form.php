@@ -1,6 +1,3 @@
-
-    <br><br><br>
-
 	<div class="container">
 		<h1><?=$tipe?> Articel</h1>
 		<form method="post" class="form-horizontal" enctype="multipart/form-data">

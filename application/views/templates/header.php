@@ -33,26 +33,19 @@
       <li class="nav-item">
         <a class="nav-link" href="<?php echo site_url()?>V_Blog/">Blog</a>
       </li>
+      <?php if($this->session->userdata('logged_in')) : ?>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url()?>Category/">Category</a>
+        <a class="nav-link" href="<?php echo site_url()?>User/dashboard">Dashboard</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url()?>Datatablesctr/">Artikel</a>
-      </li>
-    
     </ul>
+    <div class="btn-group" role="group" aria-label="Data baru">
+          <?php echo anchor('User/logout', 'Logout', array('class' => 'btn btn-outline-light')); ?>
+        </div>
+      <?php endif; ?>
     <?php if(!$this->session->userdata('logged_in')) : ?>
         <div class="btn-group" role="group" aria-label="Data baru">
           <?php echo anchor('User/register', 'Register', array('class' => 'btn btn-outline-light')); ?>
           <?php echo anchor('User/login', 'Login', array('class' => 'btn btn-outline-light')); ?>
-        </div>
-      <?php endif; ?>
-
-      <?php if($this->session->userdata('logged_in')) : ?>
-        <div class="btn-group" role="group" aria-label="Data baru">
-          <?php echo anchor('V_blog/add', 'Artikel Baru', array('class' => 'btn btn-outline-light')); ?>
-          <?php echo anchor('Category/create', 'Kategori Baru', array('class' => 'btn btn-outline-light')); ?>
-          <?php echo anchor('User/logout', 'Logout', array('class' => 'btn btn-outline-light')); ?>
         </div>
       <?php endif; ?>
   </div>
@@ -72,7 +65,6 @@
           <?php echo '<div class="alert alert-success">'.$this->session->flashdata('user_loggedout').'</div>'; ?>
         <?php endif; ?>
         
-    <br><br><br><br>
             </div>
         </nav>
         

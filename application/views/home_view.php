@@ -1,9 +1,5 @@
-
-	<br><br><br><br>
 <div class="container">
     	<div class="col-xs-12 col-sm-9 col-md-9">
-      <a href="add" class="btn btn-primary">Add Artikel</a>
-      <br><br>
       <?php foreach ($artikel as $key): ?>
 
         <div class="well well-sm">
